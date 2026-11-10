@@ -4,6 +4,8 @@ metadata:
   name: vm-gitops
   namespace: vm-gitops
 spec:
+  applicationSet:
+    enabled: true
   server:
     route:
       enabled: true
