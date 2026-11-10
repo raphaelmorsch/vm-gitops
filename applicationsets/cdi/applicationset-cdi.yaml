@@ -16,7 +16,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/0xFelix/gitops-demo.git
+        repoURL: https://github.com/raphaelmorsch/vm-gitops.git
         targetRevision: HEAD
         path: applicationsets/cdi/manifests
       destination:

@@ -1,5 +1,9 @@
 # Managing VirtualMachines with GitOps
 
+Fork of [0xFelix/gitops-demo](https://github.com/0xFelix/gitops-demo) for the demo in
+[Using Red Hat Advanced Cluster Management and OpenShift GitOps to manage OpenShift Virtualization](https://www.redhat.com/en/blog/using-red-hat-advanced-cluster-management-and-openshift-gitops-to-manage-openshift-virtualization).
+ApplicationSets in this fork point at `https://github.com/raphaelmorsch/vm-gitops.git`.
+
 This repository contains instructions and files for a demonstration
 deployment that shows how a CI/CD workflow of [`VirtualMachines`](https://kubevirt.io/user-guide/)
 across multiple clusters could look like. It works with Open Cluster Management,
