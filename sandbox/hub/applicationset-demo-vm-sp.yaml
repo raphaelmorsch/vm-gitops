@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: demo-vm-sp
+  namespace: vm-gitops
+spec:
+  generators:
+  - clusters:
+      selector:
+        matchLabels:
+          argocd.argoproj.io/secret-type: cluster
+          name: cluster-sno-sp
+  template:
+    metadata:
+      name: "{{nameNormalized}}-demo-vm"
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/raphaelmorsch/vm-gitops.git
+        targetRevision: HEAD
+        path: applicationsets/demo-vm/kustomize/dev
+        kustomize:
+          commonAnnotations:
+            managed-cluster: "{{nameNormalized}}"
+      destination:
+        server: "{{server}}"
+        namespace: vm-gitops
+      syncPolicy:
+        syncOptions:
+        - CreateNamespace=true
+        automated:
+          selfHeal: true
+          prune: true

@@ -1,0 +1,9 @@
+apiVersion: argoproj.io/v1beta1
+kind: ArgoCD
+metadata:
+  name: vm-gitops
+  namespace: vm-gitops
+spec:
+  server:
+    route:
+      enabled: true

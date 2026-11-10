@@ -2,6 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: demo-vm
+  namespace: vm-gitops
 spec:
   generators:
   # Only select external clusters, excludes local cluster
@@ -23,7 +24,7 @@ spec:
             managed-cluster: "{{nameNormalized}}"
       destination:
         server: "{{server}}"
-        namespace: demo-vm
+        namespace: vm-gitops
       syncPolicy:
         syncOptions:
         - CreateNamespace=true
