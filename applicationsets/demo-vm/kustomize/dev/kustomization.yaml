@@ -10,6 +10,6 @@ patches:
   - patch: |
       - op: replace
         path: /spec/template/spec/domain/memory/guest
-        value: 4096M
+        value: 2048M
     target:
       kind: VirtualMachine
